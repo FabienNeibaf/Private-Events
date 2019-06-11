@@ -1,0 +1,15 @@
+
+
+<div id="auth">
+  <% if flash[:alert] %>
+    <div class="error"><%= flash[:alert] %></div>
+  <% end %>
+  <div>
+    <h2>Authenticate</h2>
+    <%= form_for :session do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.submit 'Sign in' %>
+    <% end %>
+  </div>
+</div>

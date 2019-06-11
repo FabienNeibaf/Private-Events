@@ -1,0 +1,11 @@
+<header>
+  <h1><%= link_to 'Private Events', root_path %></h1>
+  <div id="user">
+    <%= @user ? @user.name : 'Menu' %>
+    <i class="icon fa fas fa-angle-down"></i>
+    <div class="login">
+      <%= @user ? (link_to 'Sign out', signout_path, method: :delete)
+                : (link_to 'Sign in' , signin_path) %>
+    </div>
+  </div>
+</header>
