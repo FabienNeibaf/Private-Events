@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Create a form</h2>
+
+  <%= form_for(@event) do |f| %>
+    <%= hidden_field_tag :creator_id, @event.creator_id %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form_control' %>
+    <%= f.label :description %>
+    <%= f.text_area :description, cols: "30", rows: "10", class: 'form_control' %>
+    <%= f.submit "Create the event", class: "btn btn-primary" %>
+  <% end %>
+</div>

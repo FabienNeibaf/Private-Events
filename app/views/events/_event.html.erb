@@ -1,4 +1,4 @@
 <li id="event-<%= event.id %>">
-  <span class="font-weight-bold"><%= event.title %></span>
-  <span><%= time_ago_in_words(event.event_date) %></span>
+  <div class="font-weight-bold"><strong><%= event.title %></strong> <small><%= event.event_date %></small></div>
+  <div><%= event.description %></div>
 </li>
