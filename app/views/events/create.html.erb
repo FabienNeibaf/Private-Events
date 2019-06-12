@@ -1,0 +1,7 @@
+<% form_for @event do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form_control' %>
+  <%= f.label :description %>
+  <%= f.textarea_field :description, class: 'form_control' %>
+  <%= f.submit "Create the event", class: "btn btn-primary" %>
+<% end %>
