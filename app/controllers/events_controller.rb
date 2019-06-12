@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def new
     @event = current_user.creator_events.build
     # debugger
-    
+
   end
 
   def create
@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   end
 
   def index
+    @events = current_user.creator_events
   end
 
   private
