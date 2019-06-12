@@ -1,1 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <h2>User</h2>
 
+      <%= render "users/user", user: @user %>
+
+    </div>
+    <div class="col-md-7">
+      <h2>Events (<%= @events.count %>)</h2>
+
+      <ul class="events">
+      <% if @events.any? %>
+        <%= render @events %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
