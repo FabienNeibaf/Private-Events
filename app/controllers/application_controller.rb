@@ -1,13 +1,10 @@
 class ApplicationController < ActionController::Base
-
-
 	include SessionsHelper
-  
-  # def index
-  #   @user = current_user
-  #   @user ? redirect_to(@user) : render('/index')
-  #   debugger
-  # end
+
+  def index
+    @user = current_user
+    @user ? redirect_to(@user) : render('/index')
+  end
 
   # def current_user
   #   user_id = session[:user_id]
