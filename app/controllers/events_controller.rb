@@ -22,6 +22,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def add_attendee
+    @user = User.find(params[:user_id])
+    @user.attended_events
+  end
+
   private
 
   def event_params
