@@ -1,4 +1,16 @@
-<div class="container">
-  <h2>Creator</h2>
+<div class="container col-md-4 event-page">
+  <h3><%= @event.title %></h3>
+  <strong>Date:</strong> <%= @event.event_date.to_date %> <br />
+  <strong>Starting time:</strong> <%= @event.event_date.strftime('%H:%M') %>
+  <h4>Creator</h4>
   <%= render "users/user", user: @event.creator %>
+  <h4>Attendees</h4>
+  <ul>
+    <% @event.attendees.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </ul>
+  <% if @current_user == @event.creator && @event.event_date > DateTime.now %>
+    <%= link_to 'Invite Friends', new_invitation_path %>
+  <% end %>
 </div>

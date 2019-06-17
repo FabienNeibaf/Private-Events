@@ -1,0 +1,21 @@
+<div id="invitation">
+  <% if flash[:alert] %>
+    <div class="error"><%= flash[:alert] %></div>
+  <% end %>
+  <div>
+    <h2>Invitation</h2>
+    <%= form_for @invitation do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :body, 'Description' %>
+      <%= f.text_field :body %>
+      <%= f.label :event_id, 'Event' %>
+      <%= f.select(:event_id, @current_user.created_events.map { |e| [ e.title, e.id ] }) %>
+      <%= f.label :guest_id, 'Invitee' %>
+      <%= f.select(:guest_id, User.all.select { |u| u.id != @current_user.id }
+                               .map { |u| [ u.name, u.id ] }) %>
+      <%= f.hidden_field :host_id, value: @current_user.id %>
+      <%= f.submit 'Send' %>
+    <% end %>
+  </div>
+</div>

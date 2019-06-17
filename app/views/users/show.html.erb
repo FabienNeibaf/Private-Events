@@ -1,18 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
-      <h2>User</h2>
-
-      <%= render "users/user", user: @user %>
-
-    </div>
-    <div class="col-md-7">
-      <h2>Events (<%= @events.count %>)</h2>
-
+    <div class="col-md-6">
+      <h3>Upcoming Events</h3>
       <ul class="events">
-      <% if @events.any? %>
-        <%= render @events %>
-      <% end %>
+        <% @upcoming_events.each do |event| %>
+          <%= render event %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>Past Events</h3>
+      <ul class="events">
+        <% @prev_events.each do |event| %>
+          <%= render event %>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -1,0 +1,9 @@
+<li>
+  <strong><%= invitation.title %></strong><br/>
+  <% if @current_user == invitation.guest %>
+    From: <%= invitation.host.name %>
+  <% end %>
+  <% if @current_user == invitation.host %>
+    To: <%= invitation.guest.name %>
+  <% end %>
+</li>

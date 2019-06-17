@@ -1,0 +1,57 @@
+// Place all the styles related to the invitations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#invitation {
+  width: 500px;
+  margin: auto;
+  background: #f7f7f7;
+
+  .error {
+    margin: auto;
+    padding: 20px;
+    color: #f73007;
+    text-align: center;
+    background: #fff5f3;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #555;
+  }
+
+  >div {
+    padding: 20px;
+    padding-top: 5px;
+  }
+
+  label,
+  input,
+  select {
+    display: block;
+  }
+
+  label {
+    margin-top: 20px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 5px;
+    font-size: 1.05em;
+    border-radius: 3px;
+    border: 1px solid #555;
+  }
+
+  input[type=submit] {
+    width: 60%;
+    margin: auto;
+    color: #fff;
+    margin-top: 30px;
+    background: #551a8b;
+  }
+}
