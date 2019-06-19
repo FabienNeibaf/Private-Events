@@ -4,7 +4,7 @@
     From: <%= invitation.host.name %>
     <% if attendance = @current_user.attendances
                                     .select { |a| a.event == invitation.event }[0] %>
-      <%= link_to 'Leave', attendance, method: :delete %>
+      <%= link_to 'Drop', attendance, method: :delete %>
     <% else %>
       <%= link_to 'Accept', attendances_path(user_id: @current_user.id,
                                             event_id: invitation.event_id),
