@@ -21,3 +21,60 @@
     text-decoration: none;
   }
 }
+
+.create-event {
+  width: 400px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid #777;
+
+  .error {
+    padding: 20px;
+    color: #f73007;
+    text-align: center;
+    background: #fff5f3;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px dashed #777;
+  }
+
+  form {
+    padding: 10px;
+
+    label,
+    input,
+    textarea {
+      width: 100%;
+      display: block;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 5px;
+      font-weight: 1.1em;
+      border-radius: 3px;
+      border: 1px solid #777;
+
+      &[type=submit] {
+        border: none;
+        color: #fff;
+        margin-top: 20px;
+        background: #0066c0;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+      border-radius: 3px;
+      border: 1px solid #777;
+    }
+  }
+}

@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :sent_invitations, foreign_key: 'host_id', class_name: "Invitation"
   has_many :received_invitations, foreign_key: 'guest_id', class_name: "Invitation"
 
+  validates :name, :email, presence: true
+
   def upcoming_events
     attended_events.where('event_date > ?', DateTime.now)
   end

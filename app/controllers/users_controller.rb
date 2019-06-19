@@ -5,8 +5,20 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      log_in
+    else
+      flash.now[:alert] = 'Something went wrong!'
+      render 'new'
+    end
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end
