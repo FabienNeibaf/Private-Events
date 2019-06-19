@@ -2,7 +2,9 @@
   <h1><%= link_to 'Private Events', root_path %></h1>
   <nav>
     <ul>
-      <li><%= link_to 'Create Event', new_event_path %></li>
+      <% if @current_user %>
+        <li><%= link_to 'Create Event', new_event_path %></li>
+      <% end %>
       <li><%= link_to 'All Events', events_path %></li>
       <% if @current_user %>
         <li><%= link_to 'Attending Events', @current_user %></li>
