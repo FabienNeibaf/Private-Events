@@ -11,3 +11,4 @@ It is part of [Microverse](https://www.microverse.org/) curriculum.
 ## Test it
 
 To test it please, after downloading the source code, run `rails db:migrate` then `rails db:seed`
+Sign In using `Microverse Student`
