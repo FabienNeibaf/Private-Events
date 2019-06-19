@@ -11,7 +11,7 @@ evt1 = Event.create(title: 'Workshop Event', event_date: DateTime.now,
                                     students, hosted by #{microverse.name}!",
                       creator_id: microverse.id)
 evt2 = Event.create(title: 'Coding Event',
-                      event_date: DateTime.new(2019, 7, 3, 15, 0, 0, '+3'),
+                      event_date: DateTime.new(2019, 7, 3, 15, 0, 0),
                       description: "Special Coding Event for Microverse \
                                     students, hosted by #{microverse.name}!",
                       creator_id: microverse.id)
@@ -31,7 +31,7 @@ microverse.created_events = [evt1, evt2]
                                       students, hosted by #{name}!",
                         creator_id: user.id)
   event2 = Event.create(title: 'Coding Event',
-                        event_date: DateTime.new(2019, 7, 3, 15, 0, 0, '+3'),
+                        event_date: DateTime.new(2019, 7, 3, 15, 0, 0),
                         description: "Special Coding Event for Microverse \
                                       students, hosted by #{name}!",
                         creator_id: user.id)
