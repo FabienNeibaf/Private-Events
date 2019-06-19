@@ -1,12 +1,16 @@
 class EventsController < ApplicationController
-  def new
-    @event = current_user.creator_events.build
-    # debugger
 
+  def index
+    @past = Event.past
+    @upcoming = Event.upcoming
+  end
+
+  def new
+    @event = Event.new
   end
 
   def create
-    @event = current_user.creator_events.build(event_params)
+    @event = @current_user.created_events.build(event_params)
     if @event.save
       redirect_to @event
     else
@@ -18,13 +22,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def index
-    @events = current_user.creator_events
+  def add_attendee
+    @user = User.find(params[:user_id])
+    @user.attended_events
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :creator_id)
+    p params[:event][:event_date]
+    params.require(:event).permit(:title, :description, :creator_id, :event_date)
   end
 end

@@ -1,5 +1,5 @@
 header {
-  line-height: 0;
+  display: flex;
   padding: 10px 5px;
   overflow: visible;
   background: #fafafa;
@@ -7,6 +7,7 @@ header {
 
   h1 {
     margin: 0;
+    flex: none;
     margin-top: 5px;
     font-size: 1.5em;
     display: inline-block;
@@ -17,11 +18,31 @@ header {
     }
   }
 
+  nav {
+    flex: auto;
+
+    >ul {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      list-style: none;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        a {
+          display: block;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+
   #user,
   #user>.login>a {
-    float: right;
     padding: 7px 20px;
-    position: relative;
     border-radius: 2px;
     text-decoration: none;
     display: inline-block;
@@ -29,7 +50,9 @@ header {
   }
 
   #user {
+    flex: none;
     cursor: default;
+    position: relative;
 
     .icon {
       margin-left: 10px;
@@ -40,6 +63,8 @@ header {
       right: -1px;
       display: none;
       line-height: 1;
+      min-width: 100%;
+      text-align: center;
       padding: 10px 20px;
       position: absolute;
       top: calc(100% + 1px);

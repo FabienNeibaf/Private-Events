@@ -54,13 +54,21 @@
         }
 
         &[type='submit'] {
-          margin: 20px auto;
+          margin: auto;
+          margin-top: 20px;
           padding: 7px 20px;
           background: #fff;
           border-radius: 2px;
           border: 1px solid #551a8b;
         }
       }
+    }
+
+    >a {
+      display: block;
+      margin: 0 0 10px;
+      text-align: center;
+      text-decoration: underline;
     }
   }
 }

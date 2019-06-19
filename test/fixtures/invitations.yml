@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  host: one
+  guest: one
+  event: one
+
+two:
+  title: MyString
+  body: MyText
+  host: two
+  guest: two
+  event: two

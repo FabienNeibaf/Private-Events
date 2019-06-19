@@ -5,10 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+microverse = User.create(name: "Microverse Student", email: "microverse-student@microverse.com");
+evt1 = Event.create(title: 'Workshop Event', event_date: DateTime.now,
+                      description: "Special Workshop Event for Microverse \
+                                    students, hosted by #{microverse.name}!",
+                      creator_id: microverse.id)
+evt2 = Event.create(title: 'Coding Event',
+                      event_date: DateTime.new(2019, 7, 3, 15, 0, 0),
+                      description: "Special Coding Event for Microverse \
+                                    students, hosted by #{microverse.name}!",
+                      creator_id: microverse.id)
+
+evt1.attendees = [microverse]
+evt2.attendees = [microverse]
+
+microverse.created_events = [evt1, evt2]
 
 5.times do |i|
   name = Faker::Name.name
-  email = "student.#{i}@microverse.com"
+  email = "student.#{i + 1}@microverse.com"
 
-  User.create(name: name, email: email)
+  user = User.create(name: name, email: email)
+  event1 = Event.create(title: 'Workshop Event', event_date: DateTime.now,
+                        description: "Special Workshop Event for Microverse \
+                                      students, hosted by #{name}!",
+                        creator_id: user.id)
+  event2 = Event.create(title: 'Coding Event',
+                        event_date: DateTime.new(2019, 7, 3, 15, 0, 0),
+                        description: "Special Coding Event for Microverse \
+                                      students, hosted by #{name}!",
+                        creator_id: user.id)
+
+  event1.attendees = [user]
+  event2.attendees = [user]
+
+  user.created_events = [event1, event2]
 end

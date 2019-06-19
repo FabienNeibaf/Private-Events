@@ -1,13 +1,13 @@
-<div class="container">
-  <h2>Create a form</h2>
+<div class="create-event">
+  <h2>Create an event</h2>
 
-  <%= form_for(@event) do |f| %>
-    <%= hidden_field_tag :creator_id, @event.creator_id %>
+  <%= form_for @event do |f| %>
+    <%= f.hidden_field :event_date, value: DateTime.new(2019, 7, 3, 15, 0, 0) %>
 
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form_control' %>
     <%= f.label :description %>
     <%= f.text_area :description, cols: "30", rows: "10", class: 'form_control' %>
-    <%= f.submit "Create the event", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>

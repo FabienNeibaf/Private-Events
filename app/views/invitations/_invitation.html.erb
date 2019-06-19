@@ -1,0 +1,17 @@
+<li>
+  <strong><%= invitation.title %></strong><br/>
+  <% if @current_user == invitation.guest %>
+    From: <%= invitation.host.name %>
+    <% if attendance = @current_user.attendances
+                                    .select { |a| a.event == invitation.event }[0] %>
+      <%= link_to 'Drop', attendance, method: :delete %>
+    <% else %>
+      <%= link_to 'Accept', attendances_path(user_id: @current_user.id,
+                                            event_id: invitation.event_id),
+                  method: :post %>
+    <% end %>
+  <% end %>
+  <% if @current_user == invitation.host %>
+    To: <%= invitation.guest.name %>
+  <% end %>
+</li>
